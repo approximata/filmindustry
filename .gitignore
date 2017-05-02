@@ -38,6 +38,3 @@ jspm_packages
 
 # Config
 /config/*
-
-# Dist
-/dist/*
