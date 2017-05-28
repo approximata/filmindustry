@@ -1,5 +1,6 @@
 'use strict';
 
+
 const initMovieList = [
   { poster_path: '/unPB1iyEeTBcKiLg8W083rlViFH.jpg',
     adult: false,
@@ -20,7 +21,7 @@ const initMovieList = [
 const movie = (state = initMovieList, action) => {
   switch (action.type) {
     case 'MOVIES_LOADED':
-      return Object.keys(action.movie).reduce((prev, key) => prev.concat(action.movie[key]), []);
+      return Object.keys(action.movie.results).reduce((prev, key) => prev.concat(action.movie.results[key]), []);
     default:
       return state;
   }

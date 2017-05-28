@@ -8,8 +8,12 @@ import App from './App';
 import { moviesData } from './actions';
 require('./main.css');
 
+/* eslint-disable no-underscore-dangle */
 
-let store = createStore(movieApp);
+let store = createStore(movieApp, /* preloadedState, */
+window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
+
+/* eslint-enable */
 
 render(
   <Provider store={store}>
@@ -18,4 +22,4 @@ render(
   document.querySelector('.root')
 );
 
-store.dispatch(moviesData(store.dispatch));
+store.dispatch(moviesData('popularity.desc', 1, store.dispatch));
